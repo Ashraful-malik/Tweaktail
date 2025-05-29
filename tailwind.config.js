@@ -16,55 +16,63 @@ module.exports = {
         mono: ["var(--font-geist-mono)", "monospace"],
       },
       colors: {
+        // Refer to CSS variables
         text: {
-          primary: "#171702",
-          secondary: "#525252",
-          tertiary: "#a3a3a3",
-          accent: "#3b82f6",
-          onAccent: "#ffffff",
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          tertiary: "var(--color-text-tertiary)",
+          accent: "var(--color-text-accent)",
+          onAccent: "var(--color-text-on-accent)",
         },
         primary: {
-          DEFAULT: "#6366f1",
-          hover: "#4f46e5",
+          DEFAULT: "var(--color-primary)",
+          hover: "var(--color-primary-hover)",
         },
-        bg: "#fafafa",
-        surface: "#ffffff",
-        panel: "#f5f5f5",
-        toolbar: "#f2f2f2",
+        bg: "var(--color-bg)",
+        surface: "var(--color-surface)",
+        panel: "var(--color-panel)",
+        toolbar: "var(--color-toolbar)",
         border: {
-          DEFAULT: "#e5e5e5",
-          hover: "#d4d4d4",
-          active: "#6366f1",
+          DEFAULT: "var(--color-border)",
+          hover: "var(--color-border-hover)",
+          active: "var(--color-border-active)",
         },
-        accent: "#ec4899",
-        success: "#10b981",
-        warning: "#f59e0b",
-        danger: "#ef4444",
-        selection: "#e0e7ff",
-        overlay: "rgba(0,0,0,0.5)",
-        shadow: "rgba(0,0,0,0.2)",
+        accent: "var(--color-accent)",
+        success: "var(--color-success)",
+        warning: "var(--color-warning)",
+        danger: "var(--color-danger)",
+        selection: "var(--color-selection)",
+        overlay: "var(--color-overlay)",
+        shadow: "var(--color-shadow)",
       },
     },
   },
   safelist: [
+    "hover:shadow-none",
+    "hover:shadow-sm",
+    "hover:shadow-md",
+    "hover:shadow-lg",
+    "hover:shadow-xl",
+
     // Dynamic color classes
     {
       pattern:
-        /bg-(gray|red|blue|green|yellow|purple|pink)-(50|100|200|300|400|500|600|700|800|900|950)/,
+        /bg-(gray|red|blue|green|yellow|purple|pink|neutral)-(50|100|200|300|400|500|600|700|800|900|950)/,
       variants: ["hover"],
     },
     {
       pattern:
-        /ring-(gray|red|blue|green|yellow|purple|pink)-(50|100|200|300|400|500|600|700|800|900|950)/,
+        /ring-(gray|red|blue|green|yellow|purple|pink|neutral)-(50|100|200|300|400|500|600|700|800|900|950)/,
       variants: ["focus"],
     },
     {
       pattern:
-        /text-(gray|red|blue|green|yellow|purple|pink)-(50|100|200|300|400|500|600|700|800|900|950)/,
+        /text-(gray|red|blue|green|yellow|purple|pink|neutral)-(50|100|200|300|400|500|600|700|800|900|950)/,
+      variants: ["hover"],
     },
     {
       pattern:
-        /border-(gray|red|blue|green|yellow|purple|pink)-(50|100|200|300|400|500|600|700|800|900|950)/,
+        /border-(gray|red|blue|green|yellow|purple|pink|neutral)-(50|100|200|300|400|500|600|700|800|900|950)/,
     },
   ],
 

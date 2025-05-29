@@ -12,6 +12,68 @@ body {
   overflow-x: hidden;
 }
 
+/* Light mode (default) */
+:root {
+  --color-text-primary: #171702;
+  --color-text-secondary: #525252;
+  --color-text-tertiary: #a3a3a3;
+  --color-text-accent: #3b82f6;
+  --color-text-on-accent: #ffffff;
+
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-panel: #f5f5f5;
+  --color-toolbar: #f2f2f2;
+
+  --color-border: #e5e5e5;
+  --color-border-hover: #d4d4d4;
+  --color-border-active: #6366f1;
+
+  --color-accent: #ec4899;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --color-selection: #e0e7ff;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode */
+.dark {
+  --color-text-primary: #e5e5e5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #71717a;
+  --color-text-accent: #ff79c6; /* like Dracula pink */
+  --color-text-on-accent: #ffffff;
+
+  --color-primary: #bd93f9; /* soft purple */
+  --color-primary-hover: #a78bfa;
+
+  --color-bg: #1e1e1e; /* VS Code dark background */
+  --color-surface: #252526; /* subtle elevation */
+  --color-panel: #2c2c2c; /* sidebar, nav panel */
+  --color-toolbar: #2a2a2a; /* top bar */
+
+  --color-border: #3f3f46;
+  --color-border-hover: #52525b;
+  --color-border-active: #a78bfa;
+
+  --color-accent: #ff79c6;
+  --color-success: #50fa7b;
+  --color-warning: #f1fa8c;
+  --color-danger: #ff5555;
+
+  --color-selection: #44475a;
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
-  @apply text-text-primary bg-bg font-sans antialiased;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-geist-sans), sans-serif;
 }

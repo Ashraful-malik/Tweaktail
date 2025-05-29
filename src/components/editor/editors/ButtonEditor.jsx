@@ -6,7 +6,7 @@ import {
   radiusClasses,
   shadowClasses,
   sizeClasses,
-} from "@/utility/buttonPresets";
+} from "@/utility/globalClassName";
 import { cn } from "@/utility/tm";
 import React, { useEffect, useState } from "react";
 
@@ -25,6 +25,7 @@ function ButtonEditor() {
     border: "none",
   });
 
+  // TODO: Extract class generators later
   const generatedClasses = cn(
     sizeClasses[config.size],
     config.width === "full" ? "w-full" : "w-auto",
@@ -33,7 +34,7 @@ function ButtonEditor() {
     config.bgColor,
     config.shadow !== "none" && shadowClasses[config.shadow],
     config.border !== "none" && borderClasses[config.border],
-    config.border !== "none" && `border-${config.bgColor}`,
+    config.border !== "none" && borderColor(config.bgColor),
     `hover:${getDarkerShade(config.bgColor)}`,
     `focus:outline-none`,
     `focus:ring-2`,
@@ -212,4 +213,11 @@ function getDarkerShade(bgColor) {
   }
 
   return `${prefix}-${hue}-${numericShade + 100}`;
+}
+
+function borderColor(bgColor) {
+  const parts = bgColor.split("-");
+  if (parts.length < 3) return "border-indigo-500"; // fallback
+  const [, hue] = parts;
+  return `border-${hue}-500`;
 }

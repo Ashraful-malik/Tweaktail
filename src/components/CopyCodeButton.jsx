@@ -22,7 +22,8 @@ function CopyCodeButton() {
     <>
       {/* Button that open the dialog */}
       <button
-        className="px-2 py-1 border border-border flex items-center gap-1 justify-center rounded-md"
+        className="px-2 py-1 border border-border flex items-center gap-1
+         justify-center rounded-md bg-primary   text-white"
         title="View & Copy"
         onClick={() => setIsOpen(true)}
       >
@@ -59,7 +60,7 @@ function CopyCodeButton() {
                 )}
               </button>
               <button
-                className="px-3 py-1 rounded-md bg-gray-300 hover:bg-gray-400 transition-colors"
+                className="px-3 py-1 rounded-md bg-toolbar hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Close

@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
 const ColorPallet = {
+  neutral: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
   gray: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
   red: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
   blue: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
@@ -14,7 +15,6 @@ function ColorPicker({ onChange, label, type, value }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFamily, setSelectedFamily] = useState("blue");
   const closeRef = useRef(null);
-  console.log("value", value);
   const handleSelect = (family, shade) => {
     onChange(`${type}-${family}-${shade}`);
     setIsOpen(false);
@@ -51,16 +51,18 @@ function ColorPicker({ onChange, label, type, value }) {
       >
         {/* dropdown menu */}
         <div
-          className=" bg-red flex   items-center  gap-1 p-1 border  bg-panel
+          className=" bg-red flex   items-center  gap-1 p-1 border border-border bg-panel
           rounded-md cursor-pointer select-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <div
             className={`${
-              value || "bg-gray-500"
-            } w-4 h-4 rounded-sm  text-center flex items-center `}
+              value || "bg-gray-800"
+            } w-4 h-4 rounded-sm  text-center flex items-center ${
+              type === "border" && `border-2 ${value}`
+            }`}
           >
-            {value.startsWith("text") && (
+            {value?.startsWith("text") && (
               <p className={`text-sm font-bold text-center  ${value}`}>T</p>
             )}
           </div>
@@ -73,17 +75,17 @@ function ColorPicker({ onChange, label, type, value }) {
         </div>
         {/* Drop Down menu */}
         {isOpen && (
-          <div className="absolute top-11 left-0 bg-surface border rounded-md shadow-lg p-4  z-40">
+          <div className="absolute top-11 left-0 bg-surface border border-border  rounded-md shadow-lg p-4  z-40">
             {/* color family */}
             <div className="flex gap-2 flex-wrap">
               {Object.keys(ColorPallet).map((family) => {
                 return (
                   <div
-                    className={` flex flex-wrap  border p-1
+                    className={` flex flex-wrap  border border-border p-1
                     rounded-md text-xs cursor-pointer   ${
                       selectedFamily === family
-                        ? "bg-gray-800 text-white"
-                        : "bg-gray-100 hover:bg-gray-200"
+                        ? "bg-primary text-text-onAccent"
+                        : "bg-toolbar text-text-primary"
                     }`}
                     key={family}
                     onClick={() => setSelectedFamily(family)}

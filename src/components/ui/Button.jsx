@@ -6,7 +6,7 @@ import {
   radiusClasses,
   borderClasses,
   shadowClasses,
-} from "@/utility/buttonPresets";
+} from "@/utility/globalClassName";
 function Button({
   size = "md",
   width = "auto",
@@ -28,7 +28,7 @@ function Button({
         bgColor,
         shadowClasses[shadow],
         borderClasses[border],
-        border !== "none" && `border-${bgColor}`,
+        border !== "none" && borderColor(bgColor),
         `hover:${getDarkerShade(bgColor)}`,
         `focus:outline-none focus:ring-2`,
         getRingColor(bgColor),
@@ -62,6 +62,12 @@ function getRingColor(bgColor) {
   if (parts.length < 3) return "ring-indigo-300"; // fallback
   const [, hue] = parts;
   return `focus:ring-${hue}-300`;
+}
+function borderColor(bgColor) {
+  const parts = bgColor.split("-");
+  if (parts.length < 3) return "border-indigo-500"; // fallback
+  const [, hue] = parts;
+  return `border-${hue}-500`;
 }
 
 export default Button;

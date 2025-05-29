@@ -2,6 +2,7 @@
 import { useEditor } from "@/context/EditorContext";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
+import FeedbackForm from "../FeedbackForm";
 
 const availableComponents = [
   {
@@ -64,6 +65,10 @@ function LeftComponentPanel({ responsiveMode }) {
         </div>
       </div>
 
+      {/* feedback form */}
+      <div className="absolute bottom-16 left-4">
+        <FeedbackForm position="top" />
+      </div>
       {/* footer */}
       <div className="absolute bottom-2 border-t border-border w-full p-2">
         <p className="text-xs text-">Beta Version 1.0.0</p>
