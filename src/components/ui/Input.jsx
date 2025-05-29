@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input() {
+function Input({}) {
   return (
     <div className="mb-4">
       <label
