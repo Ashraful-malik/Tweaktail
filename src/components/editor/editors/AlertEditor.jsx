@@ -92,98 +92,112 @@ function AlertEditor() {
       {/* Edit control */}
       <div className="w-full space-y-4">
         {/* section Layout */}
-        <div className="w-full space-y-2 ">
-          <div className=" w-full space-y-2">
-            <h2 className=" font-medium">Layout</h2>
 
-            <div className=" w-full space-y-2 ">
-              <div className="flex flex-col gap-1">
-                <p className="text-sm ">Width</p>
-                <select
-                  value={config.width}
-                  onChange={(e) => handleChange("width", e.target.value)}
-                  className="border border-border p-1 rounded w-full text-sm bg-panel"
-                  title="width of the card"
-                >
-                  {Object.entries(widthClass).map(([key, value]) => (
-                    <option key={key} value={key}>
-                      {key}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
+        <div className=" w-full space-y-2">
+          <h2 className=" font-medium">Layout & Styling</h2>
 
-            <div className=" w-full space-y-2 ">
-              <div className="flex flex-col gap-1">
-                <p className="text-sm ">Type</p>
-                <select
-                  value={config.type}
-                  onChange={(e) => handleChange("type", e.target.value)}
-                  className="border border-border p-1 rounded w-full text-sm bg-panel"
-                  title="width of the card"
-                >
-                  {["success", "info", "warning", "error"].map((w) => (
-                    <option key={w}>{w}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <div className=" w-full space-y-2 ">
-              <div className="flex flex-col gap-1">
-                <p className="text-sm ">Border position</p>
-                <select
-                  value={config.borderAccent}
-                  onChange={(e) => handleChange("borderAccent", e.target.value)}
-                  className="border border-border p-1 rounded w-full text-sm bg-panel"
-                  title="width of the card"
-                >
-                  {["left", "top", "none"].map((w) => (
-                    <option key={w}>{w}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <div className=" w-full space-y-2 ">
-              <div className="flex flex-col gap-1">
-                <p className="text-sm ">Padding</p>
-                <select
-                  value={config.padding}
-                  onChange={(e) => handleChange("padding", e.target.value)}
-                  className="border border-border p-1 rounded w-full text-sm bg-panel"
-                  title="width of the card"
-                >
-                  {["sm", "md"].map((w) => (
-                    <option key={w}>{w}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
+          <div className=" w-full space-y-2 ">
             <div className="flex flex-col gap-1">
-              <p className="text-sm ">Visibility</p>
-              <div className="flex gap-3">
-                <div className="flex items-center gap-1">
-                  <input
-                    type="checkbox"
-                    name="showLogo"
-                    id="showLogo"
-                    onChange={(e) => handleChange("showIcon", e.target.checked)}
-                    checked={config.showIcon}
-                  />
-                  <label className="text-sm"> Show icon</label>
-                </div>
-                <div className="flex items-center gap-1">
-                  <input
-                    type="checkbox"
-                    name="showLogo"
-                    id="showLogo"
-                    onChange={(e) =>
-                      handleChange("showDismiss", e.target.checked)
-                    }
-                    checked={config.showDismiss}
-                  />
-                  <label className="text-sm"> Show Dismiss icon</label>
-                </div>
+              <p className="text-sm ">Width</p>
+              <select
+                value={config.width}
+                onChange={(e) => handleChange("width", e.target.value)}
+                className="border border-border p-1 rounded w-full text-sm bg-panel"
+                title="width of the card"
+              >
+                {Object.entries(widthClass).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {key}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className=" w-full space-y-2 ">
+            <div className="flex flex-col gap-1">
+              <p className="text-sm ">Type</p>
+              <select
+                value={config.type}
+                onChange={(e) => handleChange("type", e.target.value)}
+                className="border border-border p-1 rounded w-full text-sm bg-panel"
+                title="width of the card"
+              >
+                {["success", "info", "warning", "error"].map((w) => (
+                  <option key={w}>{w}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className=" w-full space-y-2 ">
+            <div className="flex flex-col gap-1">
+              <p className="text-sm ">Border position</p>
+              <select
+                value={config.borderAccent}
+                onChange={(e) => handleChange("borderAccent", e.target.value)}
+                className="border border-border p-1 rounded w-full text-sm bg-panel"
+                title="width of the card"
+              >
+                {["left", "top", "none"].map((w) => (
+                  <option key={w}>{w}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className=" w-full space-y-2 ">
+            <div className="flex flex-col gap-1">
+              <p className="text-sm ">Padding</p>
+              <select
+                value={config.padding}
+                onChange={(e) => handleChange("padding", e.target.value)}
+                className="border border-border p-1 rounded w-full text-sm bg-panel"
+                title="width of the card"
+              >
+                {["sm", "md"].map((w) => (
+                  <option key={w}>{w}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div className="flex flex-col gap-1 w-full">
+            <p className="text-sm">rounded</p>
+            <select
+              value={config.radius}
+              onChange={(e) => handleChange("radius", e.target.value)}
+              className="border border-border p-1 rounded w-full text-sm bg-panel"
+              title="Shadow effect on the card"
+            >
+              {Object.entries(radiusClasses).map(([key, value]) => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex flex-col gap-1">
+            <p className="text-sm ">Visibility</p>
+            <div className="flex gap-3">
+              <div className="flex items-center gap-1">
+                <input
+                  type="checkbox"
+                  name="showLogo"
+                  id="showLogo"
+                  onChange={(e) => handleChange("showIcon", e.target.checked)}
+                  checked={config.showIcon}
+                />
+                <label className="text-sm"> Show icon</label>
+              </div>
+              <div className="flex items-center gap-1">
+                <input
+                  type="checkbox"
+                  name="showLogo"
+                  id="showLogo"
+                  onChange={(e) =>
+                    handleChange("showDismiss", e.target.checked)
+                  }
+                  checked={config.showDismiss}
+                />
+                <label className="text-sm"> Show Dismiss icon</label>
               </div>
             </div>
           </div>
@@ -200,30 +214,8 @@ function AlertEditor() {
                 value={config.message}
                 onChange={(e) => handleChange("message", e.target.value)}
                 className="border border-border p-1 rounded w-full text-sm bg-panel"
-                title="Title of the alert"
+                title="add alert text"
               />
-            </div>
-          </div>
-        </div>
-        {/* effect section */}
-        <div className=" w-full space-y-2">
-          <h2 className=" font-medium">Effects</h2>
-          <div className="flex items-center gap-2 w-full flex-wrap ">
-            {/* shadow */}
-            <div className="flex flex-col gap-1 w-full">
-              <p className="text-sm">rounded</p>
-              <select
-                value={config.radius}
-                onChange={(e) => handleChange("radius", e.target.value)}
-                className="border border-border p-1 rounded w-full text-sm bg-panel"
-                title="Shadow effect on the card"
-              >
-                {Object.entries(radiusClasses).map(([key, value]) => (
-                  <option key={key} value={key}>
-                    {key}
-                  </option>
-                ))}
-              </select>
             </div>
           </div>
         </div>

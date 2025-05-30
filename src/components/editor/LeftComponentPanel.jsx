@@ -23,7 +23,7 @@ const availableComponents = [
   },
   {
     name: "Input Group",
-    url: "input-group",
+    url: "input",
   },
 ];
 

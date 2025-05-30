@@ -92,7 +92,7 @@ function FeedbackForm({ position = "right" }) {
               name="message"
               required
               className="border border-border rounded-md text-sm pl-2"
-              placeholder="your feedback"
+              placeholder="what you like and dislike about this app"
               rows={4}
             ></textarea>
           </div>

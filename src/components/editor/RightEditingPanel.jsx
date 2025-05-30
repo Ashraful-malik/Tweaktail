@@ -5,15 +5,15 @@ import ButtonEditor from "./editors/ButtonEditor";
 import NavbarEditor from "./editors/NavbarEditor";
 import AlertEditor from "./editors/AlertEditor";
 import CardEditor from "./editors/CardEditor";
-import InputGroupEditor from "./editors/InputGroupEditor";
 import { usePathname } from "next/navigation";
+import InputEditor from "./editors/InputEditor";
 
 const componentEditorMap = {
   button: ButtonEditor,
   navbar: NavbarEditor,
   alert: AlertEditor,
   card: CardEditor,
-  "input-group": InputGroupEditor,
+  input: InputEditor,
 };
 function RightEditingPanel({ responsiveMode }) {
   const pathname = usePathname();
