@@ -41,9 +41,11 @@ function LeftComponentPanel({ responsiveMode }) {
       className={`${
         responsiveMode ? "hidden" : "block"
       } w-64 h-[calc(100vh-3rem)] bg-surface border-r relative
-     border-border  overflow-x-hidden`}
+     border-border  overflow-x-hidden `}
     >
-      <div className="p-4">
+      <div className="p-4 ">
+        {/* show hide button */}
+
         <h1 className="text-lg font-bold">Components</h1>
         <div className="components flex flex-col  mt-2">
           {availableComponents.map((component, index) => {
@@ -67,7 +69,7 @@ function LeftComponentPanel({ responsiveMode }) {
 
       {/* feedback form */}
       <div className="absolute bottom-16 left-4">
-        <FeedbackForm position="top" />
+        <FeedbackForm position="top" variant="secondary" />
       </div>
       {/* footer */}
       <div className="absolute bottom-2 border-t border-border w-full p-2">

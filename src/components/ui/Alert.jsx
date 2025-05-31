@@ -16,29 +16,29 @@ function Alert({
   const paddingClass = padding === "md" ? "p-4" : "p-3";
   const borderClass =
     borderAccent === "left"
-      ? `border-l-4 ${style.border}`
+      ? `border-l-4 ${style?.border}`
       : borderAccent === "top"
-        ? `border-t-4 ${style.border}`
+        ? `border-t-4 ${style?.border}`
         : borderAccent === "none"
           ? "border-none"
           : "";
 
   return (
     <div
-      className={`${style.bg} ${borderClass} ${paddingClass} ${widthClass[width] || "w-full"} 
+      className={`${style?.bg} ${borderClass} ${paddingClass} ${widthClass[width] || "w-full"} 
       ${radiusClasses[radius]}`}
     >
       <div className="flex items-center">
         {showIcon && (
-          <div className={`flex-shrink-0 ${style.text} text-sm`}>
-            {style.icon}
+          <div className={`flex-shrink-0 ${style?.text} text-sm`}>
+            {style?.icon}
           </div>
         )}
         <div className="ml-3 flex-1">
-          <p className={`text-sm ${style.text}`}>{message}</p>
+          <p className={`text-sm ${style?.text}`}>{message}</p>
         </div>
         {showDismiss && (
-          <button className={`${style.text} ml-3`} aria-label="Dismiss">
+          <button className={`${style?.text} ml-3`} aria-label="Dismiss">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

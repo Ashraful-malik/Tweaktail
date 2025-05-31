@@ -1,7 +1,10 @@
+"use client";
 import { Monitor, Moon, Smartphone, Sun, Tablet, X } from "lucide-react";
 import React from "react";
 import CopyCodeButton from "../CopyCodeButton";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+import Link from "next/link";
 
 function EditorNavbar({ setViewport, setResponsiveMode, responsiveMode }) {
   const { theme, setTheme } = useTheme();
@@ -10,12 +13,17 @@ function EditorNavbar({ setViewport, setResponsiveMode, responsiveMode }) {
     setViewport(device);
     setResponsiveMode(true);
   };
-
+  const logoImage =
+    theme === "dark"
+      ? "/assets/images/logo-white.svg"
+      : "/assets/images/logo.svg";
   return (
     <header className="h-12 px-4 flex items-center justify-between border-b border-border bg-surface">
-      <div className="Logo px-4">Logo</div>
+      <Link href="/" className="Logo px-4">
+        <Image src={logoImage} width={30} height={30} alt="TweakTail Logo" />
+      </Link>
 
-      <div className="right-side-content flex items-center gap-6 ">
+      <div className="right-side-content flex items-center gap-6 pl-4 ">
         {/* If in preview mode, show Exit button */}
         {responsiveMode && (
           <button

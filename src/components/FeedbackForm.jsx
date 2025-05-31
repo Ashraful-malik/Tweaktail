@@ -17,8 +17,18 @@ const getFormPosition = (position) => {
       return "left-full top-0 ml-2"; // right of button
   }
 };
+const getVariantClass = (variant) => {
+  switch (variant) {
+    case "primary":
+      return "rounded-full px-4 text-sm py-2 bg-primary text-text-onAccent font-medium hover:bg-primary-hover";
+    case "secondary":
+      return "text-gray-600 hover:text-blue-500 text-sm font-medium transition-colors";
+    default:
+      return "bg-primary text-text-onPrimary";
+  }
+};
 
-function FeedbackForm({ position = "right" }) {
+function FeedbackForm({ position = "right", variant = "primary" }) {
   const [open, setOpen] = useState(false);
   const formRef = useRef(null);
 
@@ -49,8 +59,7 @@ function FeedbackForm({ position = "right" }) {
     <div className="relative inline-block">
       <Toaster richColors position="top-center" />
       <button
-        className="rounded-full px-4 text-sm py-2 bg-primary text-text-onAccent
-         font-medium flex items-center gap-2 hover:bg-primary-hover"
+        className={`${getVariantClass(variant)} flex items-center gap-2 `}
         onClick={() => setOpen(!open)}
       >
         <MessageSquare size={16} /> Feedback
@@ -60,7 +69,7 @@ function FeedbackForm({ position = "right" }) {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className={`absolute z-50 max-w-xs flex flex-col gap-4 p-6 bg-bg rounded-lg shadow-md 
+          className={`absolute z-50 max-w-xs flex flex-col gap-4 p-6 bg-bg rounded-lg shadow-md  border border-border
             ${getFormPosition(position)}`}
         >
           <button
@@ -92,7 +101,7 @@ function FeedbackForm({ position = "right" }) {
               name="message"
               required
               className="border border-border rounded-md text-sm pl-2"
-              placeholder="what you like and dislike about this app"
+              placeholder="Share your thoughts on what you like and dislike about this app."
               rows={4}
             ></textarea>
           </div>

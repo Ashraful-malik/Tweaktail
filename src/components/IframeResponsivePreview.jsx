@@ -3,9 +3,9 @@ import { useEditor } from "@/context/EditorContext";
 import { useTheme } from "next-themes";
 
 const deviceSizes = {
-  mobile: "375px",
+  mobile: "360px",
   tablet: "768px",
-  desktop: "100%",
+  desktop: "1280px",
 };
 
 function IframeResponsivePreview({ viewport, responsiveMode }) {

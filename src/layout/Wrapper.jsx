@@ -22,7 +22,13 @@ function Wrapper({ children }) {
   }, [responsiveMode]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
+      <div className="sm:hidden  top-6 bg-green-100 dark:bg-green-500 p-2 w-full ">
+        <p>
+          TweakTail is best experienced on a larger screen. Please use a desktop
+          or tablet for full editing capabilities.
+        </p>
+      </div>
       <EditorNavbar
         setViewport={setViewport}
         setResponsiveMode={setResponsiveMode}
@@ -46,6 +52,8 @@ function Wrapper({ children }) {
 
         <RightEditingPanel responsiveMode={responsiveMode} />
       </div>
+
+      {/* mobile message */}
     </div>
   );
 }

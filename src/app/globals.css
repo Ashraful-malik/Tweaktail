@@ -10,6 +10,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Light mode (default) */
@@ -20,8 +21,8 @@ body {
   --color-text-accent: #3b82f6;
   --color-text-on-accent: #ffffff;
 
-  --color-primary: #6366f1;
-  --color-primary-hover: #4f46e5;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
 
   --color-bg: #fafafa;
   --color-surface: #ffffff;
@@ -47,11 +48,11 @@ body {
   --color-text-primary: #e5e5e5;
   --color-text-secondary: #a1a1aa;
   --color-text-tertiary: #71717a;
-  --color-text-accent: #ff79c6; /* like Dracula pink */
+  --color-text-accent: #3b82f6; /* like Dracula pink */
   --color-text-on-accent: #ffffff;
 
-  --color-primary: #bd93f9; /* soft purple */
-  --color-primary-hover: #a78bfa;
+  --color-primary: #3b82f6; /* soft purple */
+  --color-primary-hover: #2563eb;
 
   --color-bg: #1e1e1e; /* VS Code dark background */
   --color-surface: #252526; /* subtle elevation */
