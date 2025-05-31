@@ -3,6 +3,9 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Analytics from "@/components/Analytics";
 import Script from "next/script";
+import { Suspense } from "react";
+import LoadingScreen from "@/components/LoadingScreen";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,7 +29,7 @@ export const metadata = {
     siteName: "Tweaktail",
     images: [
       {
-        url: "/tweaktail-twitterCard.png",
+        url: "/assets/images/tweaktail-twitterCard.png",
         width: 800,
         height: 600,
         alt: "Tweaktail image",
@@ -41,7 +44,7 @@ export const metadata = {
     locale: "en_US",
     type: "website",
     url: "https://tweaktail.xyz",
-    images: ["/tweaktail-twitterCard.png"],
+    images: ["/assets/images/tweaktail-twitterCard.png"],
   },
 };
 
@@ -69,7 +72,9 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="light">
           {children}
-          <Analytics />
+          <Suspense fallback={<LoadingScreen />}>
+            <Analytics />
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>

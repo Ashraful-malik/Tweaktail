@@ -238,7 +238,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Build Faster?</h2>
             <p className="text-lg mb-8 opacity-90">
-              Join the early users shaping TweakTail's future.
+              Join the early users shaping TweakTail&apos;s future.
             </p>
             <Link
               href="/editor/button"

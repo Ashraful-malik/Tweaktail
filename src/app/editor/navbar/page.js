@@ -3,7 +3,7 @@ import Navbar from "@/components/ui/Navbar";
 import { useEditor } from "@/context/EditorContext";
 import React from "react";
 
-function page() {
+function Page() {
   const { componentProps } = useEditor();
   return (
     <div className=" pt-8">
@@ -12,4 +12,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -3,7 +3,7 @@ import Card from "@/components/ui/Card";
 import { useEditor } from "@/context/EditorContext";
 import React from "react";
 
-function page() {
+function Page() {
   const { componentProps } = useEditor();
 
   return (
@@ -13,4 +13,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
