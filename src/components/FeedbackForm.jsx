@@ -57,7 +57,7 @@ function FeedbackForm({ position = "right", variant = "primary" }) {
 
   return (
     <div className="relative inline-block">
-      <Toaster richColors position="top-center" />
+      <Toaster richColors position="bottom-right" />
       <button
         className={`${getVariantClass(variant)} flex items-center gap-2 `}
         onClick={() => setOpen(!open)}
