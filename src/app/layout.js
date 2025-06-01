@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata = {
   title: "TweakTail | Visual Tailwind CSS Editor for Faster UI Development",
@@ -29,7 +30,7 @@ export const metadata = {
     siteName: "Tweaktail",
     images: [
       {
-        url: "/assets/images/tweaktail-twitterCard.png",
+        url: `${siteUrl}/assets/images/tweaktail-twitterCard.png`,
         width: 800,
         height: 600,
         alt: "Tweaktail image",
@@ -44,7 +45,7 @@ export const metadata = {
     locale: "en_US",
     type: "website",
     url: "https://tweaktail.xyz",
-    images: ["/assets/images/tweaktail-twitterCard.png"],
+    images: [`${siteUrl}/assets/images/tweaktail-twitterCard.png`],
   },
 };
 
